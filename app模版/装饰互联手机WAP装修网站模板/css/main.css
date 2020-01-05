@@ -1,0 +1,1074 @@
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select
+{
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+}
+ul, ol
+{
+    list-style: none;
+}
+
+image
+{
+  border:0;
+}
+
+body
+{
+ position:relative;background-color:#f4f4f4;font-size:14px;line-height:1.25em;color:#000;
+}
+
+h1 {
+    overflow: hidden;
+    display: block;
+    line-height: 19px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 0  0 0;
+    height: 25px;
+    text-align: center;
+}
+
+a{color:inherit;text-decoration:none}
+
+.NoShow
+{
+    display:none;
+}
+/*-------------页头-------------------------------*/
+header
+{
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    height: 36px;
+    border-bottom: 1px solid #c9c9c9;
+    vertical-align: middle;
+    margin-top:2px;
+}
+
+header img
+{
+    vertical-align:middle;
+    text-align: center;
+    border:0px;
+}
+/*-------------页头 结束-----------------------------*/
+
+/*--------------------- 页脚---------- */
+footer div
+{
+    clear: both;
+    border-top: 1px solid #62676f;
+    text-align: center;
+    -webkit-box-shadow: inset 0 1px 0 #dfe1e3;
+}
+
+footer a
+{
+    display:inline-block;
+  margin-top:.7em;
+  padding:.2em .7em;
+  font-size:.93em;
+  color:#333;
+  letter-spacing:-1px;
+  vertical-align:top
+}
+
+footer a:before
+{
+   display:inline-block;
+   width:1px;
+   height:12px;
+   margin:0 .7em 0 -.93em;
+   background:#dadada;
+   vertical-align:-2px;
+   content:''
+}
+
+footer a:first-child:before
+{
+display:none
+}
+
+    footer span
+    {
+        display:block;
+        clear: both;
+        padding: .8em 0 1em;
+        font-size: 11px;
+        color: #909090;
+        text-align: center;
+    }
+
+/*--------------------- 页脚 结束---------- */
+
+
+/* ---------------左图片右上大文字下小文字 corpcase.aspx  dehomes.aspx------------------------*/
+ul#lprt {
+   margin-top:-1px;
+}
+
+    ul#lprt li {
+        letter-spacing: 0px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        ul#lprt li a {
+            padding: 9px 10px; 
+            display: block;
+        }
+
+        ul#lprt li a::after {
+	        clear: both; 
+            display: block; 
+            content: "";
+        }
+
+        ul#lprt li img {
+            border: 1px solid rgb(201, 201, 201); 
+            margin-right: 10px; 
+            vertical-align: top; 
+            float: left;
+        }
+
+        ul#lprt li img.w92 {
+            width: 92px;
+            height:70px;
+        }
+
+        ul#lprt li img.w70 {
+            width: 70px;
+            height:70px;
+        }
+
+        ul#lprt li h2 {
+            overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        ul#lprt li p
+        {
+            overflow: hidden; 
+            display: block;
+            color: rgb(119, 119, 119); 
+            line-height: 18px; 
+            font-size: 13px; 
+            max-height: 36px;
+        }
+
+        ul#lprt li p.black
+        {
+            letter-spacing: 0px;
+            font-size: 13px;
+            padding: 4px 5px 4px 5px;
+             color:black;
+             max-height:none;
+        }
+
+        ul#lprt li span
+        {
+            border: 2px solid rgb(201, 201, 201);
+            margin-right: 10px;
+            vertical-align: middle;
+            float: left;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+            width: 50px;
+            height: 50px;
+        }
+
+            ul#lprt li span.over
+            {
+                background-color: #dfe1e3;
+                font-size: 20px;
+                font-family: 'Arial Black';
+            }
+
+            ul#lprt li span.runing
+            {
+                background-color: white;
+                font-size: 20px;
+                font-family: 'Arial Black';
+            }
+
+/* ---------------左图片右上大文字下小文字  结束------------------------*/
+
+
+/* -------------上图片下文字排列 3行w120h120(商品) corppro.aspx------------------------*/
+ul#tpbt
+{
+    margin-left: 2px;
+}
+
+    ul#tpbt::after
+    {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    ul#tpbt li
+    {
+        float: left;
+        margin: 0 2px 2px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        ul#tpbt li.only
+        {
+            float: none;
+            letter-spacing: 0px;
+        }
+
+        ul#tpbt li a
+        {
+            padding: 6px 0 0 6px;
+            display: block;
+            overflow: hidden;
+            width: 130px;
+            height: 175px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        ul#tpbt li img
+        {
+            display: block;
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        ul#tpbt li h2
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 0 0 0;
+            height: 25px;
+            text-align: center;
+        }
+
+        ul#tpbt li h3
+        {
+            display: block;
+            font-size: 13px;
+            line-height: 18px;
+            color: #222;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 2px;
+        }
+
+        ul#tpbt li p
+        {
+            display: block;
+            font-size: 13px;
+            line-height: 18px;
+            color: #222;
+            text-align: center;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+/* --------------- 结束------------------------*/
+
+/* -------------上图片下文字排列 2行w120h90(图片收藏) collectpic.aspx------------------------*/
+ul#tpbt2
+{
+    margin-left: 2px;
+}
+
+    ul#tpbt2::after
+    {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    ul#tpbt2 li
+    {
+        float: left;
+        margin: 0 2px 2px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    ul#tpbt2 li.only
+    {
+         float:none;
+         letter-spacing: 0px;
+    }
+
+        ul#tpbt2 li a
+        {
+            padding: 6px 0 0 6px;
+            display: block;
+            overflow: hidden;
+            width: 130px;
+            height: 120px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        ul#tpbt2 li img
+        {
+            display: block;
+            width: 120px;
+            height: 90px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        ul#tpbt2 li h2
+        {
+          overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 0 0 0;
+            height: 25px;
+            text-align: center;
+        }
+
+        ul#tpbt2 li h3
+        {
+            display: block;
+            font-size: 13px;
+            line-height: 18px;
+            color: #222;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 2px;
+            font-weight:normal;
+        }
+
+/* --------------- 结束------------------------*/
+
+/* -------------上图片下文字排列 2行w70h70(图片收藏) collectmem.aspx------------------------*/
+ul#tpbt3
+{
+    margin-left: 2px;
+}
+
+    ul#tpbt3::after
+    {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    ul#tpbt3 li
+    {
+        float: left;
+        margin: 0 2px 2px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+    ul#tpbt3 li.only
+    {
+         float:none;
+         letter-spacing: 0px;
+    }
+
+        ul#tpbt3 li a
+        {
+            padding: 6px 0 0 6px;
+            display: block;
+            overflow: hidden;
+            width: 80px;
+            height: 100px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        ul#tpbt3 li img
+        {
+            display: block;
+            width: 70px;
+            height: 70px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        ul#tpbt3 li h2
+        {
+          overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 0 0 0;
+            height: 25px;
+            text-align: center;
+        }
+
+        ul#tpbt3 li h3
+        {
+            display: block;
+            font-size: 13px;
+            line-height: 18px;
+            color: #222;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 2px;
+            font-weight:normal;
+        }
+
+/* --------------- 结束------------------------*/
+
+/* -------------单独图片排列(品牌图片) probrand.aspx------------------------*/
+ul#piconly
+{
+    margin-left: 2px;
+}
+
+ul#piconly::after
+{
+    clear: both;
+    display: block;
+    content: "";
+}
+
+ul#piconly li
+{
+    float: left;
+    margin: 0 2px 2px;
+}
+
+    ul#piconly li a
+    {
+        padding: 6px 0 0 6px;
+        display: block;
+        overflow: hidden;
+        width: 80px;
+        height: 80px;
+        letter-spacing: -1px;
+        text-align: center;
+    }
+
+    ul#piconly li img
+    {
+        display: block;
+        width: 70px;
+        height: 70px;
+        background-color: #ddd;
+        border-radius: 2px;
+    }
+/* ---------------结束------------------------*/
+
+/*-----------内容按行显示 corp.aspx 如企业会员页 设计师页 施工员页 具体信息------------------*/
+ul#contlist {
+	margin-top: -1px;
+}
+
+    ul#contlist li
+    {
+        letter-spacing: 0px;
+        border-bottom: 1px solid #d4d4d4;
+        overflow: hidden;
+        display: block;
+        line-height: 18px;
+        font-size: 13px;
+        padding: 4px 5px 4px 5px;
+    }
+
+    ul#contlist li.gray
+{
+    overflow: hidden;
+    display: block;
+    line-height: 18px;
+    font-size: 13px;
+    padding: 4px  5px 4px  5px;
+    color: rgb(119, 119, 119); 
+    text-align: center;
+}
+        ul#contlist li h2
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 0 0 0;
+            height: 25px;
+            text-align: center;
+        }
+
+        ul#contlist li.picbrand
+        {
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px 0 5px 0;
+        }
+
+        ul#contlist li.picbrand img
+        {
+            width:70px;
+            height:70px;
+        }
+
+         ul#contlist li.picpro
+        {
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px 0 5px 0;
+        }
+
+        ul#contlist li.picpro img
+        {
+            width:95%;
+        }
+/*-----------结束------------------*/
+
+/* -------------单独图片排列(首页图片) default.aspx------------------------*/
+ul#picd
+{
+    
+	overflow: hidden;
+    margin: 4px 0 4px 4px;
+}
+
+    ul#picd::after
+    {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    ul#picd li
+    {
+        float: left;
+        margin: 12px 12px 12px 12px;
+    }
+
+        ul#picd li a
+        {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            letter-spacing: -1px;
+            text-align: center;
+            border: 0px solid #c9c9c9;
+            float: left;
+        }
+
+        ul#picd li img
+        {
+            display: block;
+            width: 130px;
+            height: 70px;
+            margin: 0px 0px 0px 0px;
+            background-color: #ddd;
+            background-position: 0px 0px;
+        }
+        
+/* ---------------结束------------------------*/
+
+/*-----------文字列表并指向（首页内容）----------------*/
+.conturlm {
+	margin-top: -1px;
+}
+
+    .conturlm li
+    {
+        letter-spacing: 0px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        .conturlm li a
+        {
+            padding: 4px 4px;
+            display: block;
+        }
+
+            .conturlm li a::after
+            {
+                clear: both;
+                display: block;
+                content: "";
+            }
+
+        .conturlm li h2
+{
+    overflow: hidden;
+    display: block;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 0 0 20px;
+    height: 24px;
+    text-align: left;
+}
+
+        .conturlm li h3
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 18px;
+            font-size: 13px;
+            padding: 2px 0 2px 0;
+            font-weight: normal;
+        }
+/*-----------结束------------------*/
+
+/* 首页的目录列表*/
+.hpT
+{
+ overflow:hidden;
+ margin:4px 0 4px 4px;
+}
+
+.hpL
+{
+ float:left;
+ margin:4px 4px 4px 4px;
+ }
+
+.hpL a{
+display:block;
+overflow:hidden;
+position:relative;
+letter-spacing:-1px;
+text-align:center;
+border: 0px solid #c9c9c9;
+}
+
+.hpP
+{
+ display:block;
+ width:60px;
+ height:58px;
+ margin:0px  0px 0px 0px;
+ background-color:#ddd;
+ border-radius:5px;
+}
+
+.hpP120
+{
+ display:block;
+ width:130px;
+ height:70px;
+ margin:0px  0px 0px 0px;
+ background-color:#ddd;
+ background-position:0px 0px;
+}
+
+.hpP120L
+{
+ float:left;
+ display:block;
+ width:70px;
+ height:70px;
+ margin:0px  0px 0px 0px;
+ background-color:#ddd;
+ background-position:0px 0px;
+}
+
+.hpP120R
+{
+ float:left;
+ display:block;
+ width:60px;
+ height:70px;
+ margin:0px  0px 0px 0px;
+ background-color:#ddd;
+ background-position:0px 0px;
+}
+
+
+
+/*-----------文字内容按流排列(品牌文字)--probrand.aspx----------------*/
+ul#contflow {
+	margin-top: -1px;
+}
+ul#contflow::before
+{
+    clear: both;
+    display: block;
+    content: "";
+}
+    ul#contflow li
+{
+    overflow: scroll;
+    display: inline;
+    line-height: 26px;
+    font-size: 13px;
+    padding: 4px 10px 4px 5px;
+}
+
+/*----------- 结束------------------*/
+
+
+/*-----------内容按行显示并有指向 corpbrand.aspx corpnews.aspx product.aspx-----------------*/
+ul#conturl {
+	margin-top: -1px;
+}
+
+    ul#conturl li
+    {
+        letter-spacing: 0px;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        ul#conturl li a
+        {
+            padding: 9px 10px;
+            display: block;
+        }
+
+            ul#conturl li a::after
+            {
+                clear: both;
+                display: block;
+                content: "";
+            }
+
+        ul#conturl li h2
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 8px 0 0 0;
+            height: 25px;
+            text-align: center;
+        }
+
+        ul#conturl li h3
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 19px;
+            font-size: 14px;
+            padding: 4px 0 4px 0;
+            font-weight: normal;
+        }
+
+        ul#conturl li p
+        {
+            overflow: hidden;
+            display: block;
+            line-height: 18px;
+            font-size: 13px;
+            padding: 2px 4px 2px 4px;
+            color: rgb(119, 119, 119);
+        }
+
+/*-----------内容按行显示并有指向  结束------------------*/
+
+/*-----------内容按图片加标题显示（主要显示大图片） casepicshow.aspx casepicone.aspx-----------------*/
+section#contpic
+{
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+    section#contpic img
+    {
+        width: 95%;
+        text-align: center;
+    }
+
+    section#contpic h2
+    {
+        overflow: hidden;
+        display: block;
+        color: rgb(119, 119, 119);
+        line-height: 18px;
+        font-size: 13px;
+        max-height: 36px;
+    }
+   
+/*-----------内容按上图片下标题显示  结束------------------*/
+
+
+/* ---------------会员空间的栏目导航-----------------------*/
+nav#nav_mem {
+    background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_mem a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 60px;
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    background:white;
+}
+
+nav#nav_mem a.selected {
+    background: rgb(255, 102, 0);
+    color: white;
+}
+
+nav#nav_mem a.longtext {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 120px;
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    background:white;
+}
+
+/* ---------------会员空间页的栏目导航 结束-----------------------*/
+
+/* ---------------会员空间的栏目导航-----------------------*/
+nav#nav_brand {
+    background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_brand a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    background:white;
+}
+
+nav#nav_brand a.w60 {
+    width: 60px;
+    margin: 5px 5px 5px 5px;
+}
+
+nav#nav_brand a.w120
+{
+    width: 120px;
+    margin: 6px 5px 4px 5px;
+}
+
+nav#nav_brand a.selected {
+    background: rgb(255, 102, 0);
+    color: white;
+}
+
+/* ---------------会员空间页的栏目导航 结束-----------------------*/
+
+/* ---------------页头上部的主导航-----------------------*/
+nav#nav_top {
+    background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_top a
+{
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 60px;
+    color: rgb(68, 68, 68);
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    clip: rect(auto, auto, auto, 20px);
+}
+
+nav#nav_top a.leftpage {
+    float: left;
+}
+
+nav#nav_top a.rightpage {
+    float:right;
+}
+
+nav#nav_top span {
+    line-height: 25px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    width: 80px;
+    height:25px;
+    overflow:hidden;
+}
+
+/* ---------------页头上部的主导航 结束-----------------------*/
+
+
+/* ---------------翻页导航(上一页  页标  下一页)-----------------------*/
+nav#nav_page {
+background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_page a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 62px;
+    color: rgb(68, 68, 68);
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    clip: rect(auto, auto, auto, 20px);
+}
+
+nav#nav_page a.leftpage {
+    float: left;
+}
+
+nav#nav_page a.rightpage {
+    float:right;
+}
+
+nav#nav_page span {
+    line-height: 25px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    width: 120px;
+    height: 25px;
+    overflow: hidden;
+}
+
+/* ---------------翻页 结束-----------------------*/
+
+/* ---------------button导航-----------------------*/
+nav#nav_button {
+background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_button a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 50px;
+    color: rgb(68, 68, 68);
+    line-height: 50px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+}
+/* ---------------button导航 结束-----------------------*/
+
+
+/* ---------------button2导航(按键内有两行文字) manapage.aspx-----------------------*/
+nav#nav_button2 {
+background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_button2 a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 50px;
+    color: rgb(68, 68, 68);
+    height: 50px;
+    display: inline-block;
+    margin: 3px 3px 3px 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+nav#nav_button2 a h2 {
+     margin-top: 8px;
+    font-size: 12px;
+    font-weight: normal;
+}
+/* ---------------结束-----------------------*/
+
+/* ---------------button的长导航(长按钮)-----------------------*/
+nav#nav_buttonLong {
+background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav#nav_buttonLong a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 160px;
+    color: rgb(68, 68, 68);
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    letter-spacing: 2px;
+}
+/* ---------------button导航 结束-----------------------*/
+
+/* ---------------分类导航 casepic.aspx-----------------------*/
+nav.nav_cate {
+    background: rgb(244, 244, 244); 
+    text-align: center; 
+    padding-top: 7px; 
+    padding-bottom:7px;
+    border-top:1px solid rgb(220, 220, 220); 
+    border-bottom:1px solid rgb(220, 220, 220); 
+}
+
+nav.nav_cate a {
+    background: rgb(204, 204, 204);
+    border-radius: 3px;
+    border: 1px solid rgb(175, 175, 175);
+    width: 70px;
+    color: rgb(68, 68, 68);
+    line-height: 25px;
+    font-size: 12px;
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+}
+
+nav.nav_cate h2
+{
+    overflow: hidden; 
+    display: block;
+    line-height: 19px; 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin-bottom: 4px;
+}
+/* ---------------分类导航 结束-----------------------*/

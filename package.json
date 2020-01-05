@@ -1,0 +1,20 @@
+{
+  "name": "my-notes",
+  "version": "1.0.0",
+  "description": "百川东到海，何时复西归",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liu245933567/my-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liu245933567/my-notes/issues"
+  },
+  "homepage": "https://github.com/liu245933567/my-notes#readme"
+}
