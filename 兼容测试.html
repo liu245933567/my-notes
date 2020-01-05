@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>事件模拟</title>
+    <meta content="text/html; charset=utf-8" />
+    <meta name="Generator" content="EditPlus" />
+    <meta name="Author" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+  </head>
+
+  <body>
+    <input type="text" id="input1" value="10000" />
+    <button id="button1" onclick="divClick()">点击测试</button>
+    <div>
+      <ul id="ulT">
+        <li class="item">fsda</li>
+        <li class="item">ewre</li>
+        <li class="item">qewe</li>
+        <li class="item">xvc</li>
+        <li class="item">134</li>
+        <li class="item">fsda</li>
+        <li class="item">ewre</li>
+        <li class="item">qewe</li>
+        <li class="item">xvc</li>
+        <li class="item">134</li>
+        <li class="item">fsda</li>
+        <li class="item">ewre</li>
+        <li class="item">qewe</li>
+        <li class="item">xvc</li>
+        <li class="item">134</li>
+      </ul>
+    </div>
+
+    <script>
+      function addEvent(ele, eve, fn) {
+        if (ele.addEventListener) {
+          ele.addEventListener(eve, fn);
+        } else if (ele.attachEvent) {
+          ele.attachEvent("on" + eve, fn);
+        } else {
+          ele["on" + eve] = fn;
+        }
+      }
+
+      addEvent(document, "mousedown", function(e) {
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        if (target.id !== "input1") {
+          if (event.preventDefault) {
+            event.preventDefault();
+          } else {
+            event.returnValue = false;
+            // return false;
+          }
+        }
+        return false;
+      });
+
+      //判断是否为IE浏览器,在IE浏览器下判断IE浏览器版本
+      function IEVersion() {
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var isIE =
+          userAgent.indexOf("compatible") > -1 &&
+          userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+        var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+        var isIE11 =
+          userAgent.indexOf("Trident") > -1 &&
+          userAgent.indexOf("rv:11.0") > -1;
+        if (isIE) {
+          var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+          reIE.test(userAgent);
+          var fIEVersion = parseFloat(RegExp["$1"]);
+          if (fIEVersion == 7) {
+            return 7;
+          } else if (fIEVersion == 8) {
+            return 8;
+          } else if (fIEVersion == 9) {
+            return 9;
+          } else if (fIEVersion == 10) {
+            return 10;
+          } else {
+            return 6; //IE版本<=7
+          }
+        } else if (isEdge) {
+          return "edge"; //edge
+        } else if (isIE11) {
+          return 11; //IE11
+        } else {
+          return -1; //不是ie浏览器
+        }
+      }
+
+      function set_text_value_position(obj, spos) {
+        var tobj = document.getElementById(obj);
+        if (spos < 0) spos = tobj.value.length;
+        if (tobj.setSelectionRange) {
+          //兼容火狐,谷歌
+          setTimeout(function() {
+            tobj.setSelectionRange(spos, spos);
+            tobj.focus();
+          }, 0);
+        } else if (tobj.createTextRange) {
+          //兼容IE
+          var rng = tobj.createTextRange();
+          rng.move("character", spos);
+          rng.select();
+        }
+      }
+
+      /**
+       * 模拟键盘事件和鼠标事件
+       * @param {*} el 绑定的对象
+       * @param {*} evtType 事件类型
+       * @param {*} keyCode 按键编码
+       */
+      function fireKeyEvent(el, evtType, keyCode) {
+        var doc = el.ownerDocument,
+          win = doc.defaultView || doc.parentWindow,
+          evtObj;
+        //非IE
+        if (doc.createEvent) {
+          //Firefox
+          if (win.KeyEvent) {
+            evtObj = doc.createEvent("KeyEvents");
+            evtObj.initKeyEvent(
+              evtType,
+              true,
+              true,
+              win,
+              false,
+              false,
+              false,
+              false,
+              keyCode,
+              0
+            );
+          }
+          //Chrome/Safari/Opera
+          else {
+            evtObj = doc.createEvent("UIEvents");
+            Object.defineProperty(evtObj, "keyCode", {
+              get: function() {
+                return this.keyCodeVal;
+              }
+            });
+            Object.defineProperty(evtObj, "which", {
+              get: function() {
+                return this.keyCodeVal;
+              }
+            });
+            evtObj.initUIEvent(evtType, true, true, win, 1);
+            evtObj.keyCodeVal = keyCode;
+            if (evtObj.keyCode !== keyCode) {
+              console.log(
+                "keyCode " +
+                  evtObj.keyCode +
+                  " 和 (" +
+                  evtObj.which +
+                  ") 不匹配"
+              );
+            }
+          }
+          el.dispatchEvent(evtObj);
+        }
+        //IE下
+        else if (doc.createEventObject) {
+          evtObj = doc.createEventObject();
+          evtObj.keyCode = keyCode;
+          el.fireEvent("on" + evtType, evtObj);
+        }
+      }
+
+      function getInputSelection(el) {
+        var start = 0,
+          end = 0,
+          normalizedValue,
+          range,
+          textInputRange,
+          len,
+          endRange;
+
+        if (
+          typeof el.selectionStart == "number" &&
+          typeof el.selectionEnd == "number"
+        ) {
+          start = el.selectionStart;
+          end = el.selectionEnd;
+        } else {
+          range = document.selection.createRange();
+
+          if (range && range.parentElement() == el) {
+            len = el.value.length;
+            normalizedValue = el.value.replace(/\r\n/g, "\n");
+
+            // Create a working TextRange that lives only in the input
+            textInputRange = el.createTextRange();
+            textInputRange.moveToBookmark(range.getBookmark());
+
+            // Check if the start and end of the selection are at the very end
+            // of the input, since moveStart/moveEnd doesn't return what we want
+            // in those cases
+            endRange = el.createTextRange();
+            endRange.collapse(false);
+
+            if (textInputRange.compareEndPoints("StartToEnd", endRange) > -1) {
+              start = end = len;
+            } else {
+              start = -textInputRange.moveStart("character", -len);
+              start += normalizedValue.slice(0, start).split("\n").length - 1;
+
+              if (textInputRange.compareEndPoints("EndToEnd", endRange) > -1) {
+                end = len;
+              } else {
+                end = -textInputRange.moveEnd("character", -len);
+                end += normalizedValue.slice(0, end).split("\n").length - 1;
+              }
+            }
+          }
+        }
+
+        return {
+          start: start,
+          end: end
+        };
+      }
+
+      function divClick() {
+        console.log("点击了button");
+        console.log("浏览器版本---------", IEVersion());
+        // console.log(getCursorPosition());
+        console.log(getCursorPosition(document.getElementById("input1")));
+        set_text_value_position("input1", 2);
+      }
+
+      function getSelection(el) {
+        return (("selectionStart" in el &&
+          function() {
+            var l = el.selectionEnd - el.selectionStart;
+            return {
+              start: el.selectionStart,
+              end: el.selectionEnd,
+              length: l,
+              text: el.value.substr(el.selectionStart, l)
+            };
+          }) ||
+          (document.selection &&
+            function() {
+              el.focus();
+
+              var r = document.selection.createRange();
+              if (r === null) {
+                return {
+                  start: 0,
+                  end: el.value.length,
+                  length: 0
+                };
+              }
+
+              var re = el.createTextRange();
+              var rc = re.duplicate();
+              re.moveToBookmark(r.getBookmark());
+              rc.setEndPoint("EndToStart", re);
+
+              return {
+                start: rc.text.length,
+                end: rc.text.length + r.text.length,
+                length: r.text.length,
+                text: r.text
+              };
+            }) ||
+          function() {
+            return null;
+          })();
+      }
+
+      function getCursorPosition(el) {
+        if (el.selectionStart) {
+          var l = el.selectionEnd - el.selectionStart;
+          return {
+            start: el.selectionStart,
+            end: el.selectionEnd,
+            length: l,
+            text: el.value.substr(el.selectionStart, l)
+          };
+        } else if (document.selection) {
+          el.focus();
+
+          var r = document.selection.createRange();
+          if (r === null) {
+            return {
+              start: 0,
+              end: el.value.length,
+              length: 0
+            };
+          }
+
+          var re = el.createTextRange();
+          var rc = re.duplicate();
+          re.moveToBookmark(r.getBookmark());
+          rc.setEndPoint("EndToStart", re);
+
+          return {
+            start: rc.text.length,
+            end: rc.text.length + r.text.length,
+            length: r.text.length,
+            text: r.text
+          };
+        } else {
+          return {
+            start: 0
+          };
+        }
+      }
+    </script>
+
+    <script type="text/javascript">
+    (function(){
+      alert('shit');
+      window.location.href='http://236.flycua.com:8600/h5/home.html#/'
+    })();
+      document.getElementById("ulT").onclick = function(event) {
+        console.log(event.target);
+        console.log(event.currentTarget);
+      };
+    </script>
+  </body>
+</html>
